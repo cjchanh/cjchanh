@@ -12,11 +12,11 @@ The current wedge is governed agent-action evidence: make an action request, eva
 python3 -m venv /tmp/deponent-eval
 source /tmp/deponent-eval/bin/activate
 python -m pip install deponent==0.1.0
-python -c "import tempfile; from deponent import Cell; c=Cell(tempfile.mkdtemp(), use_jail=False); print(c.act('write_file',{'path':'n.txt','content':'hi'}).output); print(c.act('run_cmd',{'cmd':'rm -rf /'}).output); print(c.verify())"
+python -c "import pathlib,tempfile; from deponent import Cell; root=tempfile.mkdtemp(); target=pathlib.Path(root,'blocked-example'); target.mkdir(); c=Cell(root,use_jail=False); print(c.act('write_file',{'path':'n.txt','content':'hi'}).output); print(c.act('run_cmd',{'cmd':'rm -rf ./blocked-example'}).output); print('target preserved:',target.exists()); print(c.verify())"
 python -m deponent.badge verify --kernel deponent
 ```
 
-Expected behavior: the write is allowed, the destructive fixture is blocked, and the two-entry ledger chain verifies.
+Expected behavior: the write is allowed, the relative-path destructive fixture is blocked, `target preserved: True` confirms the disposable directory remains, and the two-entry ledger chain verifies. The fixture targets only a new subdirectory inside the temporary workspace, so a gate failure cannot target the host root.
 
 ## Related public work
 
