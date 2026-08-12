@@ -23,7 +23,7 @@ Expected behavior: the write is allowed, the relative-path destructive fixture i
 - [GAK Conformance Standard](https://github.com/cjchanh/gak-conformance-standard) — testable language for governed-agent action gates. Published certifications are author-built; third-party verdicts are still zero.
 - [Sworn](https://github.com/cjchanh/sworn) — commit-governance research. It is not part of the current validator path; a known zero-kernel boundary requires a security audit before promotion.
 - [mildoc-lint](https://github.com/cjchanh/mildoc-lint) — evidence-oriented linting for military/technical documents. Public main CI is green at ec9d544 (https://github.com/cjchanh/mildoc-lint/actions/runs/31554837180).
-- [fleet-watch](https://pypi.org/project/fleet-watch/) 0.2.0 is on PyPI. github.com/cjchanh/fleet-watch currently 404s; the 0.2.0 sdist recovers the package and tests.
+- [fleet-watch](https://pypi.org/project/fleet-watch/) 0.2.0 is on PyPI. Public repo: https://github.com/cjchanh/fleet-watch (recovered/published 2026-08-12).
 - [map-ruler](https://github.com/cjchanh/map-ruler) — deterministic map calibration. Public main CI is green at 127f789 (https://github.com/cjchanh/map-ruler/actions/runs/31554834611).
 
 ## What I will and will not claim
