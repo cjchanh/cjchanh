@@ -11,7 +11,7 @@ The current wedge is governed agent-action evidence: make an action request, eva
 ```bash
 python3 -m venv /tmp/deponent-eval
 source /tmp/deponent-eval/bin/activate
-python -m pip install deponent==0.1.0
+python -m pip install deponent==0.1.1
 python -c "import pathlib,tempfile; from deponent import Cell; root=tempfile.mkdtemp(); target=pathlib.Path(root,'blocked-example'); target.mkdir(); c=Cell(root,use_jail=False); print(c.act('write_file',{'path':'n.txt','content':'hi'}).output); print(c.act('run_cmd',{'cmd':'rm -rf ./blocked-example'}).output); print('target preserved:',target.exists()); print(c.verify())"
 python -m deponent.badge verify --kernel deponent
 ```
@@ -22,8 +22,9 @@ Expected behavior: the write is allowed, the relative-path destructive fixture i
 
 - [GAK Conformance Standard](https://github.com/cjchanh/gak-conformance-standard) — testable language for governed-agent action gates. Published certifications are author-built; third-party verdicts are still zero.
 - [Sworn](https://github.com/cjchanh/sworn) — commit-governance research. It is not part of the current validator path; a known zero-kernel boundary requires a security audit before promotion.
-- [mildoc-lint](https://github.com/cjchanh/mildoc-lint) — evidence-oriented linting for military/technical documents. Its package test fix is public; the current public CI lint gate is not green.
-- [map-ruler](https://github.com/cjchanh/map-ruler) — deterministic map calibration. README setup is portable; current public CI still has a plot-dependency failure.
+- [mildoc-lint](https://github.com/cjchanh/mildoc-lint) — evidence-oriented linting for military/technical documents. Public main CI is green at ec9d544 (https://github.com/cjchanh/mildoc-lint/actions/runs/31554837180).
+- [fleet-watch](https://pypi.org/project/fleet-watch/) 0.2.0 is on PyPI. github.com/cjchanh/fleet-watch currently 404s; the 0.2.0 sdist recovers the package and tests.
+- [map-ruler](https://github.com/cjchanh/map-ruler) — deterministic map calibration. Public main CI is green at 127f789 (https://github.com/cjchanh/map-ruler/actions/runs/31554834611).
 
 ## What I will and will not claim
 
