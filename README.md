@@ -18,10 +18,12 @@ shasum -a 256 Archivist-Sort.dmg
 # be0bccba86ac465a6109c810b00fe227f3d88653bd122f170c7443254c36fe38
 ```
 
-It ships with an MCP server built fail-closed for agent fleets: read tools (scan, census,
-duplicate evidence, plan preview) are free; anything that mutates requires exact acknowledgement
-strings copied from a real plan artifact. A model cannot invent them, so an agent cannot execute
-a plan it hasn't surfaced to you.
+It ships with an MCP server for agent fleets: read tools (scan, census, duplicate evidence, plan
+preview) mutate nothing; every mutation goes to a checksummed quarantine — never a delete — and
+is byte-reversible with rollback. The safety model is recovery, not prevention: Sort gates and
+receipts its own actions so an agent's mistake through Sort is always recoverable and auditable.
+It does not sandbox your agent's other tools — which is exactly why quarantine-and-rollback, not a
+gate, is what protects you.
 
 ## Break this, get named credit
 
