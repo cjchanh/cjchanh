@@ -15,8 +15,12 @@ the page so you can verify the download before you ever open it:
 
 ```
 shasum -a 256 Archivist-Sort.dmg
-# be0bccba86ac465a6109c810b00fe227f3d88653bd122f170c7443254c36fe38
+# compare with the SHA-256 printed on https://sort.archivist.tools/download.html
+# (v2.3.0 as of 2026-09-04: 74f9147bcb8e2f3b69167e57f0d9cb544bf5e9527b9a13d38400555417a73d1a)
 ```
+
+The download page is the source of truth for the current hash; this README records one dated
+value and will lag a release.
 
 It ships with an MCP server for agent fleets: read tools (scan, census, duplicate evidence, plan
 preview) mutate nothing; every mutation goes to a checksummed quarantine — never a delete — and
