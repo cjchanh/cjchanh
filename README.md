@@ -46,8 +46,7 @@ person recompute the record. Refuses destructive commands that leave the workspa
 ```
 python3 -m venv /tmp/deponent-eval
 source /tmp/deponent-eval/bin/activate
-python -m pip install deponent==0.1.1
-# pending — not on PyPI yet: python -m pip install deponent==0.1.2
+python -m pip install deponent==0.1.2
 python -c "import pathlib,tempfile; from deponent import Cell; root=tempfile.mkdtemp(); target=pathlib.Path(root,'blocked-example'); target.mkdir(); c=Cell(root,use_jail=False); print(c.act('write_file',{'path':'n.txt','content':'hi'}).output); print(c.act('run_cmd',{'cmd':'rm -rf ./blocked-example'}).output); print('target preserved:',target.exists()); print(c.verify())"
 python -m deponent.badge verify --kernel deponent
 ```
