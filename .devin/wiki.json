@@ -1,0 +1,38 @@
+{
+  "repo_notes": [
+    {
+      "content": "cjchanh is the GitHub profile README repository for CJ Chanhnourack, founder of Centennial Defense Systems (Colorado Springs). The README is the public-facing profile surface; its governing discipline is 'every product ships with a way to verify the claim: a hash to check, a verifier to run, a ledger to recompute.' It lists shippable products (Archivist Sort with printed SHA-256 and quarantine-and-rollback safety model), the AAAP Challenge (public attestation format with 54 commissioned attack cases), three public kernels (Deponent, Sworn, fleet-watch), an 'Outside check' red-team section, and an explicit 'What I will and will not claim' policy.",
+      "author": "Devin"
+    },
+    {
+      "content": "Layout is minimal (6 tracked files): README.md is the whole profile surface; docs/redteam-2026-09-05.md is the outside red-team report of the public surface; .githooks/ contains pre-commit, commit-msg, and attribution-patterns.txt enforcing claim/attribution hygiene on commits. There is no code, build, or CI — documentation should focus on content structure and the claims discipline, not invent infrastructure.",
+      "author": "Devin"
+    },
+    {
+      "content": "Vocabulary: verification-first claims, AAAP challenge, quarantine-and-rollback (recovery-not-prevention safety model), tamper-evident vs tamper-proof, red-team finding IDs D-1/C1/F-1/F-2/L-1 with closing commits. First-class sources: README.md and docs/redteam-2026-09-05.md only.",
+      "author": "Devin"
+    }
+  ],
+  "pages": [
+    {
+      "title": "Overview",
+      "purpose": "What this repo is: the GitHub profile README for cjchanh / Centennial Defense Systems. Cover the verification-first claims discipline ('a hash to check, a verifier to run, a ledger to recompute') and that the repo is docs-only — README.md plus docs/redteam-2026-09-05.md plus .githooks.",
+      "parent": null
+    },
+    {
+      "title": "Profile README",
+      "purpose": "The README.md structure: founder identity and contact, 'Ships you can buy today' (Archivist Sort incl. the printed-SHA-256 verification flow and quarantine-and-rollback MCP safety model), the AAAP Challenge, the three public kernels (Deponent pip-installable walkthrough, Sworn, fleet-watch), the Outside check section, and the explicit 'What I will and will not claim' policy.",
+      "parent": "Overview"
+    },
+    {
+      "title": "Red Team Report",
+      "purpose": "docs/redteam-2026-09-05.md — the outside verification of the public surface: scope, findings, and the closing commits it references across deponent, fleet-watch, and longmemeval-evidence (D-1, C1, F-1/F-2, L-1).",
+      "parent": "Overview"
+    },
+    {
+      "title": "Commit Hygiene Hooks",
+      "purpose": ".githooks/: the pre-commit and commit-msg hooks and attribution-patterns.txt — what they enforce about attribution and claims hygiene in commit metadata.",
+      "parent": null
+    }
+  ]
+}
